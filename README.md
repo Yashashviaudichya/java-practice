@@ -1,53 +1,105 @@
-# ☕ Advance Java Lab
+# ☕ Advanced Java Lab
 
 ### Advanced Java Laboratory Experiments & Project Repository
 
-This repository contains a collection of practical assignments, laboratory experiments, and project work developed as part of the **Advanced Java** coursework.
+This repository contains a comprehensive collection of practical assignments, laboratory experiments, and an enterprise-grade project developed as part of the **Advanced Java** coursework.
 
-The repository demonstrates the implementation of various Java programming concepts, including graphical user interface development, event handling, database connectivity using JDBC, client-server communication, server-side programming, and Java Servlet technology.
-
-It also includes **ShopSphere**, a Java project developed as part of the coursework.
+The repository demonstrates core and advanced Java enterprise technologies, including:
+- **GUI Programming & Event Handling:** Java Swing & AWT (MVC Architecture).
+- **Database Connectivity:** JDBC with MySQL Connector/J and PreparedStatement.
+- **Networking & Socket Programming:** TCP Client-Server communication using `ServerSocket` and `Socket`.
+- **Distributed Computing:** Java Remote Method Invocation (RMI) with registry and remote interfaces.
+- **Server-Side Web Development:** Jakarta Servlets, `HttpSession`, `@WebFilter`, and `@WebListener`.
+- **Dynamic Web Presentation:** JavaServer Pages (JSP), Request Dispatching, and Expression Language (EL).
+- **Full-Stack Enterprise Project:** **ShopSphere** — an e-commerce platform with a dual web storefront and desktop inventory management interface.
 
 ---
 
 ## 👤 Author Details
 
-| Field      | Details            |
-| ---------- | ------------------ |
-| Name       | Yashashvi Audichya |
-| Section    | E                  |
-| Roll No.   | 24EGJAD06O         |
-| Subject    | Advanced Java      |
-| Repository | java practice      |
+| Field      | Details                                                    |
+| ---------- | ---------------------------------------------------------- |
+| **Name**   | Yashashvi Audichya                                         |
+| **Section**| E                                                          |
+| **Roll No.**| 24EGJAD060                                                |
+| **Subject**| Advanced Java                                              |
+| **Repository**| [java-practice](https://github.com/Yashashviaudichya/java-practice) |
 
 ---
 
 ## 📂 Repository Structure
 
 ```text
-Advance-Java-lab/
+java-practice/
 │
-├── LAB-1/                  # Student Registration Form
+├── LAB-1/                          # Student Registration Form
+│   └── StudentRegistration.java    # Swing GUI with input validation & event handling
 │
-├── LAB-2/                  # Calculator Application
+├── LAB-2/                          # Calculator Application (MVC Pattern)
+│   ├── CalculatorModel.java        # Arithmetic logic and zero-division handling
+│   ├── CalculatorView.java         # Swing graphical interface components
+│   ├── CalculatorController.java   # Event listener binding Model and View
+│   └── Main.java                   # Application entry point
 │
-├── LAB-3/                  # JDBC
+├── LAB-3/                          # JDBC (Java Database Connectivity)
+│   ├── lib/
+│   │   └── mysql-connector-j-26.7.0.jar # MySQL JDBC Driver
+│   └── src/
+│       ├── App.java                # Runner entry point
+│       └── JdbcDemo.java           # Connection, PreparedStatement, and ResultSet handling
 │
-├── LAB-4/                  # Client-Server Programming
+├── LAB-4/                          # Client-Server Socket Programming
+│   ├── client.java                 # TCP Client sending and receiving messages
+│   └── server.java                 # Multi-stream TCP Server listening on port 5000
 │
-├── LAB-5/                  # Server Class
+├── LAB-5/                          # Java RMI (Remote Method Invocation)
+│   ├── MyInterface.java            # Remote interface extending java.rmi.Remote
+│   ├── MyRemote.java               # Remote object implementation (UnicastRemoteObject)
+│   ├── Server.java                 # RMI Registry host on port 1099 with naming rebind
+│   └── Client.java                 # Remote lookup and distributed method execution
 │
-├── LAB-6/                  # Java Servlet
+├── LAB-6/                          # Servlets: Session, Filters & Listeners
+│   └── servlet/
+│       ├── pom.xml                 # Maven WAR configuration (Tomcat 10 / Jakarta EE)
+│       └── src/main/
+│           ├── java/com/servlet/
+│           │   ├── AppListener.java    # @WebListener ServletContext lifecycle handler
+│           │   ├── AuthFilter.java     # @WebFilter checking user authentication
+│           │   ├── HelloServlet.java   # HTTP GET/POST servlet
+│           │   ├── HomeServlet.java    # Authenticated session landing page
+│           │   └── LoginServlet.java   # Authentication handler and session creator
+│           └── webapp/
+│               └── index.html          # Login portal page
 │
-├── LAB-7/                  # Java Servlet
+├── LAB-7/                          # Servlets & JSP Integration (MVC & Dispatching)
+│   └── servlet/
+│       ├── pom.xml                 # Maven build file
+│       └── src/main/
+│           ├── java/com/servlet/
+│           │   └── HelloServlet.java   # Controller forwarding request attributes
+│           └── webapp/
+│               ├── index.html          # Entry page redirecting to student.jsp
+│               ├── student.jsp         # Form collecting student details
+│               └── result.jsp          # View rendering details with Expression Language (${...})
 │
-├── JAVA_PROJECT/           # ShopSphere
-│
-├── import_database.bat
-│
-├── run_desktop_swing.bat
-│
-├── start_tomcat.bat
+├── JAVA_PROJECT/                   # ShopSphere E-Commerce System
+│   ├── ShopSphere/                 # Multi-Tier Enterprise Web Application
+│   │   ├── database/
+│   │   │   └── shopsphere.sql      # Database schema and seed data
+│   │   ├── pom.xml                 # Maven project descriptor
+│   │   └── src/main/
+│   │       ├── java/com/shopsphere/
+│   │       │   ├── controller/     # Servlets (Auth, Cart, Checkout, Admin, Orders)
+│   │       │   ├── dao/            # Data Access Objects (UserDAO, ProductDAO, etc.)
+│   │       │   ├── desktop/        # SwingInventoryViewer desktop GUI
+│   │       │   ├── filter/         # Authentication & Admin authorization filters
+│   │       │   ├── listener/       # Application lifecycle listener
+│   │       │   ├── model/          # Domain models (User, Product, Order, CartItem)
+│   │       │   └── util/           # DBConnection pool / MySQL helper
+│   │       └── webapp/             # JSP storefront, admin portal, and fragments
+│   ├── import_database.bat         # Windows script to import shopsphere.sql to MySQL
+│   ├── run_desktop_swing.bat       # Windows script to launch Desktop Inventory Viewer
+│   └── start_tomcat.bat            # Windows script to deploy WAR & launch Apache Tomcat
 │
 └── README.md
 ```
@@ -56,20 +108,21 @@ Advance-Java-lab/
 
 ## 🛠️ Technologies Used
 
-The laboratory experiments cover different aspects of Java development.
-
-| Technology         | Purpose                                   |
-| ------------------ | ----------------------------------------- |
-| Java               | Core programming language                 |
-| Java Swing         | Desktop GUI development                   |
-| Java AWT           | GUI components and event handling         |
-| JDBC               | Database connectivity                     |
-| SQL                | Database operations                       |
-| Socket Programming | Client-server communication               |
-| Jakarta Servlet    | Server-side web development               |
-| JSP                | Dynamic web pages                         |
-| Apache Tomcat      | Servlet container                         |
-| Git & GitHub       | Version control and repository management |
+| Technology             | Purpose                                           | Used In                  |
+| ---------------------- | ------------------------------------------------- | ------------------------ |
+| **Java (JDK 17/21)**   | Core programming language                         | All Labs & Project       |
+| **Java Swing & AWT**   | Desktop GUI development                           | LAB-1, LAB-2, ShopSphere |
+| **JDBC**               | Relational database connectivity via MySQL Driver | LAB-3, ShopSphere        |
+| **MySQL**              | Relational database management system             | LAB-3, ShopSphere        |
+| **Socket Programming** | Low-level TCP/IP network communication            | LAB-4                    |
+| **Java RMI**           | Distributed object computing & method invocation  | LAB-5                    |
+| **Jakarta Servlet**    | Server-side HTTP request/response processing      | LAB-6, LAB-7, ShopSphere |
+| **Servlet Filters**    | Intercepting HTTP requests for authentication     | LAB-6, ShopSphere        |
+| **Servlet Listeners**  | Application and session lifecycle events          | LAB-6, ShopSphere        |
+| **JSP & JSTL / EL**    | Dynamic server-side rendering & MVC presentation  | LAB-7, ShopSphere        |
+| **Apache Maven**       | Build automation and dependency management        | LAB-6, LAB-7, ShopSphere |
+| **Apache Tomcat 10+**  | Jakarta EE compatible servlet container           | LAB-6, LAB-7, ShopSphere |
+| **Git & GitHub**       | Version control and repository management         | Entire Repository        |
 
 ---
 
@@ -78,453 +131,396 @@ The laboratory experiments cover different aspects of Java development.
 ## LAB-1: Student Registration Form
 
 ### Objective
-
-To develop a graphical user interface using Java Swing that allows users to enter student information through a registration form.
+To develop a graphical user interface using Java Swing that allows users to enter student information through an interactive registration form with real-time validation.
 
 ### Description
+Demonstrates fundamental Java Swing components and event-driven programming. It presents a registration window with fields for Name, Roll Number, Gender (radio group), Branch, and Terms & Conditions acceptance. Validates required fields before displaying a formatted confirmation dialog.
 
-This experiment demonstrates GUI development using Java Swing. It provides an interactive student registration interface where users can enter their details.
-
-The application demonstrates the use of form components, event handling, input validation, and user interaction.
-
-### Features
-
-- Student registration interface.
-- Input fields for student information.
-- Form validation.
-- Reset button functionality.
-- Submission confirmation dialog.
-- Formatted display of submitted details.
-
-### Concepts Covered
-
-- Java Swing components.
-- Event handling.
-- ActionListener.
-- Form validation.
-- GUI layout management.
-- Dialog boxes.
+### Key Features & Concepts
+- **Swing Components:** `JFrame`, `JLabel`, `JTextField`, `JRadioButton`, `ButtonGroup`, `JCheckBox`, `JButton`.
+- **Event Handling:** Implementation of `ActionListener` on `actionPerformed(ActionEvent e)`.
+- **Validation:** Alert dialogs (`JOptionPane.showMessageDialog`) for empty fields and unaccepted terms.
+- **State Reset:** Clear and reset form controls to default state.
 
 ---
 
-## LAB-2: Calculator Application
+## LAB-2: Calculator Application (MVC Architecture)
 
 ### Objective
-
-To design and implement a GUI-based calculator application using Java Swing.
+To design and implement a desktop calculator application using Java Swing structured with the **Model-View-Controller (MVC)** architectural pattern.
 
 ### Description
+Decouples application logic into three distinct layers:
+1. **Model (`CalculatorModel.java`):** Encapsulates numerical calculation logic (`add`, `subtract`, `multiply`, `divide`) and catches arithmetic exceptions (division by zero).
+2. **View (`CalculatorView.java`):** Renders inputs, operator action buttons, and result display with an intuitive layout.
+3. **Controller (`CalculatorController.java`):** Intercepts user button interactions, extracts inputs from the View, delegates computations to the Model, and updates the View with results.
 
-This experiment focuses on developing a calculator that performs basic arithmetic operations through a graphical interface.
-
-Users can enter numeric values, select an arithmetic operation, and view the calculated result.
-
-### Features
-
-- Addition (+).
-- Subtraction (-).
-- Multiplication (\*).
-- Division (/).
-- Numeric input fields.
-- Result display.
-- Invalid input handling.
-- Division by zero error handling.
-
-### Concepts Covered
-
-- Java Swing.
-- ActionListener.
-- Arithmetic operations.
-- Exception handling.
-- Event-driven programming.
-- GUI components.
+### Key Features & Concepts
+- Separation of concerns using the MVC design pattern.
+- Arithmetic exception handling (`ArithmeticException: Cannot divide by zero`).
+- Clean user interface built using Swing components.
 
 ---
 
-## LAB-3: JDBC (Java Database Connectivity)
+## LAB-3: Database Connectivity (JDBC & MySQL)
 
 ### Objective
-
-To understand database connectivity in Java using JDBC.
+To connect a Java standalone application to a MySQL database using JDBC, performing table insertions and result set queries.
 
 ### Description
+Illustrates the standard JDBC lifecycle using `mysql-connector-j-26.7.0.jar`. It establishes a connection to a MySQL database (`college`), prepares parameterized queries using `PreparedStatement` to insert student records, and traverses the `ResultSet` using `Statement` to print records in tabular format.
 
-This experiment introduces JDBC, which allows Java applications to communicate with relational database management systems.
-
-It focuses on understanding how Java programs establish database connections and interact with databases.
-
-### Concepts Covered
-
-- JDBC architecture.
-- Database connectivity.
-- JDBC drivers.
-- Connection management.
-- SQL integration with Java.
-- Database interaction.
-
-### General JDBC Workflow
-
-1. Configure the required JDBC driver.
-2. Establish a database connection.
-3. Create a SQL statement.
-4. Execute the required database operation.
-5. Process the result, if applicable.
-6. Close database resources.
+### Key Concepts Covered
+- **Driver Loading:** `Class.forName("com.mysql.cj.jdbc.Driver")`.
+- **Connection Management:** `DriverManager.getConnection()`.
+- **Parameterized Queries:** `PreparedStatement` (`insert into student values(?,?,?)`) preventing SQL injection.
+- **Data Retrieval:** `Statement.executeQuery()` and `ResultSet.next()` iteration.
+- **Resource Management:** Closing connections and statements.
 
 ---
 
-## LAB-4: Client-Server Programming
+## LAB-4: Client-Server Socket Programming
 
 ### Objective
-
-To understand communication between client and server applications using Java.
+To implement network communication between independent Java applications using TCP sockets.
 
 ### Description
+Demonstrates bidirectional client-server interaction across a TCP/IP network connection:
+- **Server (`server.java`):** Binds a `ServerSocket` to port `5000`, blocks on `serverSocket.accept()` awaiting incoming client requests, reads the client's message via `BufferedReader`, and responds with an acknowledgment via `PrintWriter`.
+- **Client (`client.java`):** Establishes a `Socket` connection to `localhost:5000`, sends `"Hello Server"`, and prints the server's reply.
 
-This experiment introduces client-server architecture, where two applications communicate over a network.
-
-The client initiates communication, while the server listens for incoming connection requests.
-
-It demonstrates fundamental networking concepts and communication between separate Java programs.
-
-### Concepts Covered
-
-- Java networking.
-- Client-server architecture.
-- Socket programming.
-- Communication protocols.
-- Data transmission.
-- Input and output streams.
-
-### Basic Communication Flow
+### Communication Flow
 
 ```text
-        CLIENT
-           |
-           | Connection Request
-           |
-           v
-        SERVER
-           |
-           | Response
-           |
-           v
-        CLIENT
+[Client]                                           [Server]
+   │                                                  │
+   │  ─── TCP Connection Request (Port 5000) ───────> │ serverSocket.accept()
+   │  ─── "Hello Server\n" ─────────────────────────> │ input.readLine()
+   │  <── "Hello Client\n" ────────────────────────── │ output.println(...)
+   │                                                  │
+[Socket Closed]                                    [Socket Closed]
 ```
 
 ---
 
-## LAB-5: Server Class
+## LAB-5: Java RMI (Remote Method Invocation)
 
 ### Objective
-
-To study and implement server-side programming concepts using Java.
+To implement distributed object computing in Java using Remote Method Invocation (RMI), allowing a client program to invoke methods on an object residing in a different JVM.
 
 ### Description
+Implements a distributed calculation service (`Add`):
+1. **Remote Interface (`MyInterface.java`):** Declares remote methods (`add(int a, int b)`) extending `java.rmi.Remote` with `throws RemoteException`.
+2. **Remote Implementation (`MyRemote.java`):** Implements `MyInterface` and extends `java.rmi.server.UnicastRemoteObject`.
+3. **Server Host (`Server.java`):** Creates an in-process RMI registry on port `1099` using `LocateRegistry.createRegistry(1099)` and registers the remote object via `Naming.rebind("rmi://localhost/Add", obj)`.
+4. **Client (`Client.java`):** Looks up the remote reference with `Naming.lookup("rmi://localhost/Add")` and invokes `obj.add(10, 20)` transparently.
 
-This experiment focuses on the implementation of a server class and its role in client-server communication.
-
-It provides practical exposure to the server-side components of a Java networking application.
-
-### Concepts Covered
-
-- Server-side programming.
-- Java networking.
-- ServerSocket class.
-- Socket communication.
-- Connection handling.
-- Input/output streams.
-
-### General Server Workflow
+### Architecture Workflow
 
 ```text
-Start Server
-     |
-     v
-Initialize Server Socket
-     |
-     v
-Wait for Client Connection
-     |
-     v
-Accept Connection
-     |
-     v
-Perform Communication
-     |
-     v
-Close Resources
++-----------------------+              +-----------------------+
+|        Client         |              |        Server         |
+|  (Client.java)        |              |  (Server.java)        |
++-----------┬-----------+              +-----------┬-----------+
+            │                                      │
+            │  1. Naming.lookup("rmi://.../Add")   │  (registers object)
+            v                                      v
+    +──────────────────────────────────────────────────────+
+    |           RMI Registry (Port 1099)                   |
+    +──────────────────────────────────────────────────────+
+            │                                      │
+            │  2. Returns Remote Stub Reference    │
+            v                                      │
+    +───────────────────+                          │
+    |  Remote Method    | 3. Remote Invocation     v
+    |  obj.add(10, 20)  |──────────────────────> [MyRemote]
+    |                   |<────────────────────── returns 30
+    +───────────────────+
 ```
 
 ---
 
-## LAB-6: Java Servlet
+## LAB-6: Java Servlets — Filters, Sessions & Listeners
 
 ### Objective
-
-To understand server-side web application development using Java Servlet technology.
+To build an enterprise Java web application with Jakarta Servlets showcasing session management, request filtering, and application lifecycle events.
 
 ### Description
-
-This experiment introduces Java Servlets and their role in handling HTTP requests and generating responses.
-
-Servlets execute on the server and allow Java applications to process requests received from web browsers or other HTTP clients.
-
-### Concepts Covered
-
-- Servlet architecture.
-- Servlet lifecycle.
-- HttpServlet class.
-- HTTP request and response.
-- GET and POST methods.
-- Servlet URL mapping.
-- Apache Tomcat.
-
-### Servlet Lifecycle
-
-```text
-Servlet Loading
-      |
-      v
-Initialization
-    init()
-      |
-      v
-Request Processing
-   service()
-      |
-      v
-Destruction
-   destroy()
-```
+Developed as a Maven web project using the Jakarta Servlet API (`jakarta.servlet`):
+- **Session Tracking (`LoginServlet.java`):** Authenticates user credentials and initiates an HTTP session using `request.getSession()`, storing the logged-in username in session scope.
+- **Request Filtering (`AuthFilter.java`):** Uses `@WebFilter("/home")` to intercept requests to protected endpoints. Checks for an active session and redirects unauthorized access attempts back to `index.html`.
+- **Protected Endpoint (`HomeServlet.java`):** Displays a personalized dashboard utilizing the session attribute.
+- **Application Listener (`AppListener.java`):** Implements `ServletContextListener` with `@WebListener` to log application initialization and shutdown events.
 
 ---
 
-## LAB-7: Java Servlet
+## LAB-7: Java Servlets & JSP Integration (MVC Pattern)
 
 ### Objective
-
-To gain further practical experience in Java Servlet-based web application development.
+To implement the Model-View-Controller (MVC) pattern by integrating Java Servlets with JavaServer Pages (JSP) using Request Dispatching and Expression Language (EL).
 
 ### Description
-
-This experiment continues the study of Java Servlet technology and its application in server-side request processing.
-
-It provides additional practice with Java web application concepts and servlet-based development.
-
-### Relevant Concepts
-
-- Jakarta Servlet API.
-- HTTP request handling.
-- HttpServletRequest.
-- HttpServletResponse.
-- Servlet mapping.
-- Web application deployment.
-- Apache Tomcat.
+Demonstrates clean presentation-controller separation:
+1. **Input View (`student.jsp`):** HTML form collecting student details (`name`, `email`, `course`, `age`) posting to servlet endpoint `/hello`.
+2. **Controller (`HelloServlet.java`):**
+   - `doGet`: Redirects users to `student.jsp`.
+   - `doPost`: Extracts request parameters, stores them in request scope using `request.setAttribute()`, and forwards the request to the view using `RequestDispatcher.forward()`.
+3. **Output View (`result.jsp`):** Dynamically displays student information rendered cleanly with JSP Expression Language syntax: `${name}`, `${email}`, `${course}`, `${age}`.
 
 ---
 
-# 🛍️ JAVA_PROJECT — ShopSphere
+# 🛍️ JAVA_PROJECT — ShopSphere E-Commerce System
 
 ## Project Overview
 
-**ShopSphere** is the main Java project included in this Advanced Java repository.
+**ShopSphere** is a full-featured, multi-tier e-commerce and inventory management application. It uniquely combines a **Web-based storefront & administration portal** (Jakarta Servlets + JSP + MySQL) with a **Desktop Swing Inventory Viewer**, providing unified business management across web and desktop environments.
 
-The project is maintained separately from the individual laboratory experiments under the `JAVA_PROJECT` directory.
-
-### Project Information
-
-| Field                | Description      |
-| -------------------- | ---------------- |
-| Project Name         | ShopSphere       |
-| Programming Language | Java             |
-| Project Category     | Advanced Java    |
-| Project Directory    | JAVA_PROJECT     |
-| Purpose              | Academic Project |
-
-### Project Directory
+### Core Modules & Features
 
 ```text
-JAVA_PROJECT/
-    |
-    └── ShopSphere Project Files
+ShopSphere/
+├── Web Storefront (Customer Facing)
+│   ├── User Registration & Login with Password Hashing
+│   ├── Product Catalog & Category Browsing
+│   ├── Product Details & Stock Status
+│   ├── Persistent Shopping Cart Management
+│   ├── Checkout & Multi-Item Order Placement
+│   └── Customer Order History Tracking
+│
+├── Web Admin Portal (Management)
+│   ├── Protected by AdminFilter (Role-based security)
+│   ├── Administrative Dashboard (Metrics & KPIs)
+│   ├── Product Management (CRUD: Add, Edit, Delete, Update Stock)
+│   ├── Order Management (View orders, Update status: Pending/Shipped/Delivered)
+│   └── User Management (View registered users)
+│
+└── Desktop Swing Application (Inventory Viewer)
+    ├── SwingInventoryViewer.java
+    ├── Live database connection to MySQL
+    ├── Tabular inventory display with real-time stock levels
+    └── Quick refresh and desktop administration capabilities
 ```
 
-The project source files and supporting resources are maintained within the `JAVA_PROJECT` directory.
+### Architecture & Design Patterns
+- **Architectural Pattern:** Model-View-Controller (MVC).
+- **Data Access:** Data Access Object (DAO) pattern (`UserDAO`, `ProductDAO`, `CategoryDAO`, `OrderDAO`).
+- **Database Layer:** Centralized connection manager (`DBConnection.java`) connecting to MySQL `shopsphere` database.
+- **Security:** `AuthenticationFilter` for logged-in user routes; `AdminFilter` for restricted `/admin/*` operations.
+- **Persistence:** Relational schema defined in `JAVA_PROJECT/ShopSphere/database/shopsphere.sql`.
 
 ---
 
-# ⚙️ System Requirements
+# ⚙️ System Requirements & Prerequisites
 
-To compile and execute the laboratory experiments, the following software may be required depending on the experiment.
+| Software                          | Minimum Version | Purpose                                              |
+| --------------------------------- | --------------- | ---------------------------------------------------- |
+| **Java Development Kit (JDK)**    | JDK 17 or 21    | Compile and execute Java applications                |
+| **Apache Maven**                  | Maven 3.8+      | Building LAB-6, LAB-7, and ShopSphere web packages   |
+| **Apache Tomcat**                 | Tomcat 10 or 11 | Servlet container supporting `jakarta.servlet` (EE9+) |
+| **MySQL Server**                  | MySQL 8.0+      | Relational database for LAB-3 and ShopSphere         |
+| **Git**                           | Latest          | Version control                                      |
 
-| Software                          | Purpose                        |
-| --------------------------------- | ------------------------------ |
-| Java Development Kit (JDK)        | Java compilation and execution |
-| VS Code / Eclipse / IntelliJ IDEA | Development environment        |
-| Apache Tomcat                     | Running Servlet applications   |
-| JDBC Driver                       | Database connectivity          |
-| Database Server                   | JDBC experiments               |
-| Git                               | Version control                |
-
-Verify Java installation using:
+Verify your local environment:
 
 ```bash
 java -version
 javac -version
+mvn -version
 ```
 
 ---
 
-# 🚀 Installation and Execution
+# 🚀 Compilation and Execution Guide
 
-## Step 1: Clone the Repository
-
-Open a terminal and execute:
+## Clone the Repository
 
 ```bash
-git clone https://github.com/yashvar001/Advance-Java-lab.git
+git clone https://github.com/Yashashviaudichya/java-practice.git
+cd java-practice
 ```
 
-Navigate to the project directory:
+---
 
-```bash
-cd Advance-Java-lab
-```
-
-## Step 2: Open in VS Code
-
-```bash
-code .
-```
-
-## Step 3: Run Java Swing Experiments
-
-Navigate to the required lab directory and compile its Java source files.
-
-For example:
+## 1. Running LAB-1 (Student Registration Form)
 
 ```bash
 cd LAB-1
+javac StudentRegistration.java
+java StudentRegistration
 ```
-
-Compile the relevant Java file:
-
-```bash
-javac YourClassName.java
-```
-
-Run the compiled application:
-
-```bash
-java YourClassName
-```
-
-Replace `YourClassName` with the actual class containing the main method.
-
-## Step 4: Run JDBC Experiments
-
-For database-related experiments:
-
-1. Configure the required database server.
-2. Add the appropriate JDBC driver.
-3. Configure the database connection settings.
-4. Compile and execute the relevant Java program.
-
-The repository also includes a database import script:
-
-```bat
-import_database.bat
-```
-
-Review its configuration and database requirements before executing it.
-
-## Step 5: Run Client-Server Experiments
-
-For client-server applications:
-
-1. Open the server-side program.
-2. Compile the required Java files.
-3. Start the server.
-4. Open a separate terminal.
-5. Run the client program.
-6. Observe the communication between the applications.
-
-**Note:** Start the server before initiating the client connection.
-
-## Step 6: Run Servlet Experiments
-
-For LAB-6 and LAB-7:
-
-1. Install a compatible version of Apache Tomcat.
-2. Configure the Java web application.
-3. Ensure the required Servlet API dependencies are available.
-4. Deploy the application to Tomcat.
-5. Start the Tomcat server.
-6. Access the application through a web browser using its configured context path and servlet mapping.
-
-For projects using `jakarta.servlet`, use Tomcat 10 or a compatible newer version.
-
-The repository includes the following startup script:
-
-```bat
-start_tomcat.bat
-```
-
-Check its configured Tomcat installation path before running it.
 
 ---
 
-# 🖥️ Available Batch Scripts
+## 2. Running LAB-2 (Calculator Application - MVC)
 
-The repository contains batch scripts intended to simplify certain setup and execution tasks on Windows.
+```bash
+cd LAB-2
+javac *.java
+java Main
+```
 
-| Script                  | Purpose                          |
-| ----------------------- | -------------------------------- |
-| `import_database.bat`   | Database import                  |
-| `run_desktop_swing.bat` | Launch desktop Swing application |
-| `start_tomcat.bat`      | Start Apache Tomcat              |
+---
 
-These scripts may require configuration based on the local system environment.
+## 3. Running LAB-3 (JDBC & MySQL)
+
+Ensure MySQL is running locally and contains a database named `college` with a table `student`:
+```sql
+CREATE DATABASE IF NOT EXISTS college;
+USE college;
+CREATE TABLE IF NOT EXISTS student (
+    roll INT PRIMARY KEY,
+    name VARCHAR(50),
+    branch VARCHAR(50)
+);
+```
+
+Compile and run including the bundled MySQL Connector jar:
+
+**On Linux/macOS:**
+```bash
+cd LAB-3
+javac -cp "lib/*:src" -d bin src/*.java
+java -cp "bin:lib/*" App
+```
+
+**On Windows:**
+```cmd
+cd LAB-3
+javac -cp "lib/*;src" -d bin src/*.java
+java -cp "bin;lib/*" App
+```
+
+---
+
+## 4. Running LAB-4 (Client-Server Sockets)
+
+Open two terminal windows:
+
+**Terminal 1 (Start Server):**
+```bash
+cd LAB-4
+javac server.java
+java Server
+```
+
+**Terminal 2 (Start Client):**
+```bash
+cd LAB-4
+javac client.java
+java Client
+```
+
+---
+
+## 5. Running LAB-5 (Java RMI Distributed Computing)
+
+Open two terminal windows:
+
+**Terminal 1 (Start Server & RMI Registry):**
+```bash
+cd LAB-5
+javac *.java
+java Server
+```
+*The server automatically initializes the RMI registry on port 1099 and prints `Server is ready...`*
+
+**Terminal 2 (Run Client):**
+```bash
+cd LAB-5
+java Client
+```
+*Expected output: `Result = 30`*
+
+---
+
+## 6. Running LAB-6 & LAB-7 (Maven Servlet Webapps)
+
+Both experiments are standard Maven web applications configured for Tomcat 10/11.
+
+### For LAB-6:
+```bash
+cd LAB-6/servlet
+mvn clean package
+```
+Deploy the generated `target/servlet.war` to your Tomcat `webapps/` directory, start Tomcat, and open:
+```text
+http://localhost:8080/servlet/
+```
+
+### For LAB-7:
+```bash
+cd LAB-7/servlet
+mvn clean package
+```
+Deploy `target/servlet.war` to your Tomcat `webapps/` directory, start Tomcat, and open:
+```text
+http://localhost:8080/servlet/student.jsp
+```
+
+---
+
+## 7. Running JAVA_PROJECT (ShopSphere)
+
+### Step A: Import Database
+1. Make sure MySQL service is running.
+2. Run the provided script or import via CLI:
+   - **Using Batch Script (Windows):** Run `JAVA_PROJECT/import_database.bat`
+   - **Using MySQL CLI:**
+     ```bash
+     mysql -u root -p < JAVA_PROJECT/ShopSphere/database/shopsphere.sql
+     ```
+
+### Step B: Build Web Application
+```bash
+cd JAVA_PROJECT/ShopSphere
+mvn clean package
+```
+This generates `JAVA_PROJECT/ShopSphere/target/ShopSphere.war`.
+
+### Step C: Run on Apache Tomcat
+- **Using Batch Script (Windows):** Run `JAVA_PROJECT/start_tomcat.bat`
+- **Manual Deployment:** Copy `ShopSphere.war` to your Apache Tomcat `webapps/` directory and start Tomcat.
+- Access the web store in your browser:
+  ```text
+  http://localhost:8080/ShopSphere/
+  ```
+
+### Step D: Launch Desktop Swing Inventory Viewer
+- **Using Batch Script (Windows):** Run `JAVA_PROJECT/run_desktop_swing.bat`
+- **Manual Launch:**
+  ```bash
+  cd JAVA_PROJECT/ShopSphere
+  java -cp "target/classes:target/ShopSphere/WEB-INF/lib/*" com.shopsphere.desktop.SwingInventoryViewer
+  ```
+
+---
+
+# 🖥️ Available Automation Scripts
+
+Located inside the `JAVA_PROJECT/` directory for Windows environments:
+
+| Script Name                         | Location        | Purpose                                                         |
+| ----------------------------------- | --------------- | --------------------------------------------------------------- |
+| `import_database.bat`               | `JAVA_PROJECT/` | Automatically imports `shopsphere.sql` into local MySQL service |
+| `run_desktop_swing.bat`             | `JAVA_PROJECT/` | Configures classpath and launches Desktop Swing Inventory GUI   |
+| `start_tomcat.bat`                  | `JAVA_PROJECT/` | Deploys `ShopSphere.war` to Tomcat and launches the server      |
 
 ---
 
 # 🎯 Learning Outcomes
 
-Through these laboratory experiments, the following Advanced Java concepts are explored:
-
-1. Designing interactive desktop applications using Java Swing.
-2. Understanding event-driven programming.
-3. Implementing input validation and exception handling.
-4. Establishing database connectivity using JDBC.
-5. Understanding client-server communication.
-6. Exploring Java networking concepts.
-7. Implementing server-side Java programs.
-8. Understanding Servlet architecture and lifecycle.
-9. Processing HTTP requests and responses.
-10. Developing practical Java programming skills.
+1. **GUI & MVC Architecture:** Developing interactive desktop interfaces using Java Swing and separating concerns with MVC.
+2. **Database Integration:** Working with JDBC drivers, connection handling, parameterized queries, and result sets.
+3. **Network Programming:** Establishing low-level TCP client-server communication using Java Sockets.
+4. **Distributed Computing:** Building RPC/RMI applications using remote interfaces, registries, and stubs.
+5. **Modern Server-Side Java:** Developing scalable web backends with Jakarta Servlets, session management, and filters.
+6. **Dynamic Web Presentation:** Coordinating Servlets and JSP views through Request Dispatching and Expression Language.
+7. **Enterprise Engineering:** Architecting full-stack solutions with dual web and desktop clients, DAOs, and database automation.
 
 ---
 
-## 📝 Repository Notes
+## 📄 License & Academic Note
 
-- This repository is maintained for Advanced Java laboratory coursework.
-- Each lab focuses on a different Java programming concept.
-- Laboratory experiments are organized into separate directories.
-- ShopSphere is maintained under the `JAVA_PROJECT` directory.
-- Additional improvements and experiments may be added as coursework progresses.
+This repository is maintained for educational and academic purposes as part of the **Advanced Java Laboratory** curriculum.
 
----
-
-## 📄 License
-
-This repository is intended for educational and academic purposes.
-
----
-
-### ⭐ Thank You for Visiting!
-
-If you find this repository helpful, consider giving it a star.
-
-**Developed as part of Advanced Java Laboratory Coursework.**
-
+**Developed with ☕ by Yashashvi Audichya.**
