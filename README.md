@@ -523,4 +523,19 @@ Located inside the `JAVA_PROJECT/` directory for Windows environments:
 
 This repository is maintained for educational and academic purposes as part of the **Advanced Java Laboratory** curriculum.
 
-**Developed with ☕ by Yashashvi Audichya.**
+
+---
+
+## 👩‍💻 Repository Maintainer
+
+**Maintained by Yashashvi Audichya**
+
+This repository documents my Advanced Java learning journey, including seven laboratory experiments and the ShopSphere project.
+
+### Future Improvements
+- Add more Advanced Java experiments.
+- Improve existing applications.
+- Enhance project documentation.
+- Continue developing ShopSphere.
+
+⭐ Thank you for visiting my repository!
